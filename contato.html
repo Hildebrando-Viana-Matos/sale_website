@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra Cissa Viana</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+</head>
+<body>
+    <section class="menu-chamada">
+        <div class="container">
+            <header id="home">
+                <div class="container">
+        
+                    <div class="logo"></div><!--logo-->
+        
+                    <nav class="desktop">
+                        <ul>
+                            <li><a href="index.html">home</a></li>
+                            <li><a href="quem-sou.html">Quem sou eu?</a></li>
+                            <li><a href="procedimentos.html">Procedimentos</a></li>
+                            <li><a href="depoimentos.html">Depoimentos</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                        </ul>
+                    </nav><!--desktop-->
+        
+                    <nav class="mobile">
+                        <h3><i class="fa fa-bars"></i></h3>
+                        <ul>
+                            <li><a href="index.html">home</a></li>
+                            <li><a href="quem-sou.html">Quem sou eu?</a></li>
+                            <li><a href="procedimentos.html">Procedimentos</a></li>
+                            <li><a href="depoimentos.html">Depoimentos</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                        </ul>
+                    </nav><!--mobile-->
+                    <div class="clear"></div>
+                </div><!--container-->
+            </header>
+        </div><!--container-->
+    </section><!--menu-chamada-->
+
+    <section data-anime="top" style="background-color: white; padding: 40px 0;" class="contato">
+        <div class="titulo-sessao">
+            <h2>Contato</h2>
+            <h3>Entre em contato e faça marque consulta por e-mail ou telefone</h3>
+        </div><!--titulo-sessao-->
+        <div class="container">
+
+            <form method="post" action="form.php">
+                <div class="form-single w100">
+                    <span></span>
+                    <input style="border: 2px solid #233543;" type="text" name="nome" placeholder="Deixa o seu nome completo">
+                </div><!--form-single-->
+
+                <div class="form-single w50">
+                    <span></span>
+                    <input style="border: 2px solid #233543;" type="text" name="email" placeholder="Deixe o seu melhor e-mail">
+                </div><!--form-single-->
+
+                <div class="form-single w50">
+                    <span></span>
+                    <input style="border: 2px solid #233543;" type="tel" name="telefone" placeholder="Deixe o seu número de telefone">
+                </div><!--form-single-->
+
+                <input type="submit" value="Enviar">
+            </form>
+            <div class="clear"></div>
+        </div><!--container-->
+    </section><!--contato-->
+
+    <section data-anime="top" class="redes">
+        <div class="container">
+
+            <div class="facebook">
+                <h3><a href="" target="_blank"><i class="fa fa-facebook"></i></a></h3>
+                <p>Entre em contato pelo Facebook!!</p>
+            </div><!--facebook-->
+
+            <div class="instagram">
+                <h3><a href="" target="_blank"><i class="fa fa-instagram"></i></a></h3>
+                <p>Entre em contato pelo Instagram!!</p>
+            </div><!--facebook-->
+
+        </div><!--container-->
+    </section><!--redes-->
+
+    <footer>
+        <div class="container">
+
+            <div class="footer-wraper w33">
+                <h2>Entre em contato:</h2>
+                <p>(11)94920-7372</p>
+                <p>(11)94920-7372</p>
+            </div><!--wrapper-->
+
+            <div class="footer-wraper w33">
+                <h2>Endereço:</h2>
+                <p>Avenida São João, 1419, Apt 161</p>
+                <p>CEP: 01211-100</p>
+            </div><!--wrapper-->
+
+            <div class="footer-wraper w33">
+                    <h3><a href="" target="_blank"><i class="fa fa-facebook"></i></a></h3>
+                    <h3><a href="" target="_blank"><i class="fa fa-instagram"></i></a></h3>
+            </div><!--wrapper-->
+
+            <div class="footer-wraper w100">
+                <div class="logo-footer"></div>
+            </div><!--wrapper--> 
+            
+            <div class="clear"></div>
+        </div><!--container-->
+    </footer>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/menuScroll.js"></script>
+    <script src="js/scroll-animate.js"></script>
+	<script>
+		$(function(){
+			$('nav.mobile h3').click(function(){
+				$('nav.mobile ul').slideToggle();
+			})
+        })
+        
+        $(function(){
+            $('form').submit(function(){
+                var erro = false;
+                var nome = $('[name=nome]').val();
+                var email = $('[name=email]').val();
+                var telefone = $('[name=telefone]').val();
+                var mensagem = $('[name=mensagem]').val();
+                resetForm();
+                if(nome == ''){
+                    erro = true;
+                    var el = $('[name=nome]');
+                    el.parent().find('span').html('Por favor insira seu nome');
+                    el.css('border','2px solid red');
+                }
+                if(email == ''){
+                    erro = true;
+                    var el = $('[name=email]');
+                    el.parent().find('span').html('Por favor insira seu e-mail');
+                    el.css('border','2px solid red');
+                }
+                if(telefone == ''){
+                    erro = true;
+                    var el = $('[name=telefone]');
+                    el.parent().find('span').html('Por favor insira seu telefone');
+                    el.css('border','2px solid red');
+                }
+
+                return false;
+            })
+
+            function resetForm(){
+                $('input[type=text]').css('border','1px solid #ccc');
+                $('span').html('')
+            }
+        })
+        var form = $('form');
+        $('form').ajaxSubmit({
+            beforeSubmit:function(){
+                form.find('input[type=submit]').attr('disabled','true');
+                form.find('input[type=submit]').animate({'opacity':'0.4'})
+                form.find('input[type=submit]').attr('value','Carregando');
+
+            },
+            success:function(data){
+                alert('Formulário foi enviado com sucesso!');
+                form.find('input[type=submit]').removeAttr('disabled');
+                form.find('input[type=submit]').animate({'opacity':'1'})
+                form.find('input[type=submit]').attr('value','Enviar');
+                form[0].reset();
+            }
+        });
+	</script>
+</body>
+</html>
