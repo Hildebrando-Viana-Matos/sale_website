@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: #F9F9F9;
+    background-color: #f1f1f1;
 }
 
 /* Axuliary Classes */
@@ -35,8 +35,48 @@ body{
 /* Header - Menu */
 
 section.menu-chamada{
-    background: #233543;
+    /* background: #233543; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    animation: slide 5s infinite;
+    position: relative;
 }
+
+section.menu-chamada > *{
+   position: relative;
+   z-index: 2;
+}
+
+@keyframes slide {
+    0%{
+        background-image: url(../image/img-background-1.jpg);
+    }
+
+    40%{
+        background-image: url(../image/botox.jpg);
+    }
+
+    80%{
+        background-image: url(../image/img-background-2.jpg);       
+    }
+
+    100%{
+        background-image: url(../image/img-background-1.jpg);
+    }
+}
+
+section.menu-chamada::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(35, 53, 67,.5);
+    z-index: 1;
+}
+
 header{
     padding: 10px;
 }
@@ -176,6 +216,9 @@ section.quem-sou-eu .container{
     justify-items: center;
     align-items: center;
     max-width: 1000px;
+    background: white;
+    border-radius: 0px 50px 50px 0px; 
+    box-shadow: 10px 10px 5px #888888b4;
 }
 
 .img-perfil{
@@ -185,11 +228,11 @@ section.quem-sou-eu .container{
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    margin: 0 30px;
 }
 
 .descricao{
     width: 50%;
+    padding: 0 2%;
 }
 
 .titulo-sessao h2{
@@ -228,14 +271,16 @@ section.quem-sou-eu .container{
 /* Procedimentos */
 .procedimentos{
     padding: 40px 0;
-    padding-bottom: 80px;
-    background: #233543;
 }
 
 .procedimentos .titulo-sessao h2,
 .procedimentos .titulo-sessao h3{
     text-align: center;
-    color: #ffffff;
+    color: #13212c;
+}
+
+.procedimentos .titulo-sessao h3{
+    margin-bottom: 10px;
 }
 
 .procedimentos .container{
@@ -245,33 +290,52 @@ section.quem-sou-eu .container{
 .procedimentos-container{
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items:stretch;
+    -ms-flex-align: stretch;
+    justify-content: center;
 }
 
 .procedimentos-container .procedimento-single{
-    padding: 20px;
-    width: calc(100% / 4);
+    margin: 10px;
+    width: calc((100% / 3) - 20px);
+    background: #ffffff;
+    text-align: center;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 10px 10px 5px #aaaaaaa1;
 }
 
 .procedimentos-container .procedimento-single h2{
-    font-size: 32px;
-    color: #00d071;
+    color: #ffffff;
+    font-weight: 400;
     font-family: 'News Cycle', sans-serif;
-    font-weight: 700;
+    font-size: 24px;
+    background-color: #00d072;
+    text-align: center;
+    padding: 15px;
+    position: absolute;
+    left: 8%;
+    width: 84%;
+    margin: 0;
+    bottom: -25px;
+    border-radius: 50px;
+    letter-spacing: 2px;
 }
 
 .procedimentos-container .procedimento-single p{
-    padding: 10px 0;
+    padding: 50px 30px 30px 30px;
     font-family: 'Oxygen', sans-serif;
     color: #80919e;
+    font-size: 15px;
+    font-weight: 400;
 }
 
 .procedimentos-container .procedimento-single .img-procedimento{
     width: 100%;
-    height: 200px;
+    height: 300px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    position: relative;
 }
 
 .procedimentos-exemplares{
@@ -294,6 +358,7 @@ section.quem-sou-eu .container{
     text-align: center;
     padding: 20px 0;
     cursor: pointer;
+    margin-top: 12px;
     transition: background-color 200ms;
 }
 
@@ -307,11 +372,11 @@ section.quem-sou-eu .container{
 /* Depoimentos */
 .depoimentos{
     padding: 40px 0;
+    background: #233543;
 }
 
-.depoimentos .depoimento-container{
-    width: 50%;
-    float: left;
+.depoimentos .container{
+    max-width: 1400px;
 }
    
 .depoimentos .titulo-sessao{
@@ -319,12 +384,70 @@ section.quem-sou-eu .container{
 }
 
 .depoimentos .titulo-sessao h2{
-    color: #233543;
+    color: #ffffff;
     font-family: 'News Cycle', sans-serif;
     font-weight: 700;
 }
 
-.card-single{
+.depoimentos .depoimento-container{
+    display:flex;
+    flex-wrap: wrap;
+    align-items:stretch;
+    -ms-flex-align: stretch;
+    justify-content: center;
+}
+
+.depoimento-single{
+    width: calc((100% / 3) - 40px);
+    margin: 20px;
+    padding: 30px;
+    background: -webkit-linear-gradient(20deg, #3C6B8F,  #3D5DA6);
+    border-radius: 50px;
+    border: 1px solid #ffffff;
+    color: white;
+    text-align: center;
+}
+
+.depoimento-single:nth-last-child(2n+1){
+    background: -webkit-linear-gradient(20deg, #00d072,  #01db79);
+}
+
+.depoimento-single .icon i{
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.depoimento-single .depoimento-single-text{
+    padding: 10px 0;
+}
+
+.depoimento-single .depoimento-single-text p{
+    font-size: 15px;
+}
+
+.perfil-depoimento-img{
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.perfil-depoimento-nome p{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.perfil-depoimento-procedimento p{
+    font-size: 13px;
+}
+
+/* .card-single{
     padding: 20px;
 }
 
@@ -348,7 +471,7 @@ section.quem-sou-eu .container{
 }
 
 .card-single .depoimento-descricao h2{
-    color: #233543;
+    color: #ffffff;
     font-weight: 700;
     font-family: 'News Cycle', sans-serif;
     font-size: 24px;
@@ -363,7 +486,7 @@ section.quem-sou-eu .container{
 .card-single .depoimento-descricao h3{
     font-family: 'Oxygen', sans-serif;
     color: #00d071;
-}
+} */
 /* * */
 
 /* noticias */
@@ -593,6 +716,13 @@ section.redes .container{
 .instagram p{
     color: #C13584;
 }
+@media screen and (max-width: 1050px){
+
+    .procedimentos-container .procedimento-single{
+        width: calc(100% / 3);
+    }
+}
+
 @media screen and (max-width: 980px){
     nav.desktop{
         display: none;
@@ -602,9 +732,6 @@ section.redes .container{
         display: block;
     }
 
-    .procedimentos-container .procedimento-single{
-        width: calc(100% / 3);
-    }
 }
 
 @media screen and (max-width: 800px){
@@ -634,6 +761,10 @@ section.redes .container{
     section.quem-sou-eu .container{
         flex: none;
         display: block;
+        background: white;
+        border-radius: 0 0 20px 20px; 
+        box-shadow: 10px 10px 5px #888888b4;
+        padding-bottom: 20px;
     }
     .img-perfil,
     .descricao{
@@ -642,7 +773,7 @@ section.redes .container{
 
     .img-perfil{
         margin: 0 auto;
-        width: 90%;
+        width: 100%;
         max-height: 300px;
     }
 
@@ -672,18 +803,20 @@ section.redes .container{
         text-align: center;
     }
 
+    .procedimentos .titulo-sessao h3{
+        margin-bottom: 0px;
+    }
+    
+
     .procedimentos-container .procedimento-single{
         width: 100%;
         max-width: 400px;
         margin: 0 auto;
+        margin-top: 30px;
     }
 
     .procedimentos-container .procedimento-single h2{
-        font-size: 24px;
-    }
-
-    .depoimentos{
-        padding: 40px 0;
+        font-size: 14px;
     }
     
     .flex-depoimentos{
@@ -721,21 +854,41 @@ section.redes .container{
     .flex-depoimentos:nth-last-child(2) .item{
         order: 2 !important;
     }
-
-    .card-single:nth-of-type(2n+1){
-        display: none;
-    }
-
-    .card-single .content{
+    
+    .depoimentos .depoimento-container{
         flex-direction: column;
     }
-
-    .card-single .depoimento-descricao{
-        width: 100%;
+    
+    .depoimento-single{
+        width: 70%;
+        margin: 0 auto;
+        margin-top:20px;
     }
 
-    .card-single .depoimento-descricao h2{
-        text-align: center
+    .depoimento-single:nth-of-type(4n){
+        display: none;
+    }
+    
+    .perfil-depoimento-img{
+        width: 100px;
+        height: 100px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 50%;
+        border: 1px solid #ffffff;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .perfil-depoimento-nome p{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    
+    .perfil-depoimento-procedimento p{
+        font-size: 13px;
     }
 
 
@@ -802,6 +955,12 @@ section.redes .container{
     .depoimentos .titulo-sessao h2{
         font-size: 1.8rem;
     }
+
+    .depoimento-single{
+        width: 98%;
+        margin: 0 auto;
+        margin-top:20px;
+    }
 }
 
 [data-anime] {
@@ -816,4 +975,22 @@ transform: translate3d(0, -50px, 0);
 [data-anime].animate {
 opacity: 1;
 transform: translate3d(0px, 0px, 0px);
+}
+
+.box{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 5%;
+    border-radius: 20px;
+    background:#970b0b;
+}
+
+.box h1{
+    font-size: 4rem;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
 }
