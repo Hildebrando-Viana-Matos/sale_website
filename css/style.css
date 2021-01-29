@@ -102,9 +102,6 @@ nav.desktop ul{
 
 nav.desktop ul li{
     float: left;
-}
-
-nav.desktop ul li{
     text-transform: uppercase;
 }
 
@@ -376,7 +373,9 @@ section.quem-sou-eu .container{
 }
 
 .depoimentos .container{
-    max-width: 1400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
    
 .depoimentos .titulo-sessao{
@@ -390,103 +389,54 @@ section.quem-sou-eu .container{
 }
 
 .depoimentos .depoimento-container{
-    display:flex;
-    flex-wrap: wrap;
-    align-items:stretch;
-    -ms-flex-align: stretch;
+    display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
 }
 
-.depoimento-single{
-    width: calc((100% / 3) - 40px);
-    margin: 20px;
+.box-depoimento{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 3 - 40px);
+    margin: 10px;
+    background: #121e27;
+}
+
+.box-depoimento .content{
     padding: 30px;
-    background: -webkit-linear-gradient(20deg, #3C6B8F,  #3D5DA6);
-    border-radius: 50px;
-    border: 1px solid #ffffff;
-    color: white;
     text-align: center;
 }
 
-.depoimento-single:nth-last-child(2n+1){
-    background: -webkit-linear-gradient(20deg, #00d072,  #01db79);
+.box-depoimento .content i{
+    font-size: 4rem;
+    color: #33d1a0;
 }
 
-.depoimento-single .icon i{
-    font-size: 5rem;
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.depoimento-single .depoimento-single-text{
-    padding: 10px 0;
-}
-
-.depoimento-single .depoimento-single-text p{
-    font-size: 15px;
-}
-
-.perfil-depoimento-img{
-    width: 100px;
-    height: 100px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    border-radius: 50%;
-    border: 1px solid #ffffff;
-    margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.perfil-depoimento-nome p{
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.perfil-depoimento-procedimento p{
-    font-size: 13px;
-}
-
-/* .card-single{
-    padding: 20px;
-}
-
-.card-single .content{
-    display: flex;
-    align-items: center;
-}
-
-.card-single .img-depoimento{
-    width: 40%;
-    padding-top: 40%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: 3px solid #233543;
-}
-
-.card-single .depoimento-descricao{
-    width: 60%;
-    margin: 0 2%;
-}
-
-.card-single .depoimento-descricao h2{
+.box-depoimento .content p{
     color: #ffffff;
-    font-weight: 700;
-    font-family: 'News Cycle', sans-serif;
-    font-size: 24px;
-    text-align: left;
+    padding: 20px 0;
 }
 
-.card-single .depoimento-descricao p{
-    font-family: 'Oxygen', sans-serif;
-    color: #b4b4b4;
+.box-depoimento .content img{
+    width: 72px;
+    border-radius: 50%;
 }
 
-.card-single .depoimento-descricao h3{
-    font-family: 'Oxygen', sans-serif;
-    color: #00d071;
-} */
+.box-depoimento .content h3{
+    color: #33d1a0;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.box-depoimento .content h4{
+    color: #d7d7d7;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
 /* * */
 
 /* noticias */
@@ -651,6 +601,7 @@ footer{
     font-size: 40px;
     color: white;
     text-decoration: none;
+    font-weight: normal;
 }
 
 .footer-wraper:nth-of-type(4){
@@ -717,9 +668,12 @@ section.redes .container{
     color: #C13584;
 }
 @media screen and (max-width: 1050px){
-
     .procedimentos-container .procedimento-single{
         width: calc(100% / 3);
+    }
+
+    .depoimentos .depoimento-container{
+        justify-content: center;
     }
 }
 
@@ -732,7 +686,11 @@ section.redes .container{
         display: block;
     }
 
+    .box-depoimento{
+        width: calc(100% / 2 - 40px);
+    }
 }
+
 
 @media screen and (max-width: 800px){
     .w50,
@@ -793,9 +751,9 @@ section.redes .container{
     }
 
     .depoimentos .depoimento-container{
-        float: none;
         width: 100%;
         text-align: center;
+        align-items: center;
     }
 
     .procedimentos .procedimentos-container{
@@ -857,16 +815,6 @@ section.redes .container{
     
     .depoimentos .depoimento-container{
         flex-direction: column;
-    }
-    
-    .depoimento-single{
-        width: 70%;
-        margin: 0 auto;
-        margin-top:20px;
-    }
-
-    .depoimento-single:nth-of-type(4n){
-        display: none;
     }
     
     .perfil-depoimento-img{
@@ -946,6 +894,15 @@ section.redes .container{
     }
 }
 
+@media screen and (max-width: 768px){
+    .box-depoimento{
+        width: 100%;
+        height: auto;
+        padding: 30px;
+        margin: 20px 0;
+    }
+}
+
 @media screen and (max-width: 320px){
     section.chamada .titulo-chamada h2{
         font-size: 3em;
@@ -956,10 +913,8 @@ section.redes .container{
         font-size: 1.8rem;
     }
 
-    .depoimento-single{
-        width: 98%;
-        margin: 0 auto;
-        margin-top:20px;
+    .box-depoimento .content{
+        padding: 10px;
     }
 }
 
