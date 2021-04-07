@@ -23,7 +23,7 @@
 <hr>
 
 ## About The Project
-<p>This is a sales site made with HTML5, CSS3, JS and Jquery. It was one of the first sites I made</p>
+<p>This is a sales site made with HTML5, CSS3, JS, Jquery and PHP. It was one of the first sites I made</p>
 
 ### Built With
 I used some web technologies in order to train:mortar_board::
@@ -31,6 +31,8 @@ I used some web technologies in order to train:mortar_board::
 * CSS3
 * JavaScript
 * Jquery
+* PHP
+
 
 ## Getting Started
 It is so simple to install and run this project on your local machine, but you can just go to this [link](https://hildebrando-viana-matos.github.io/sale_website/home)
