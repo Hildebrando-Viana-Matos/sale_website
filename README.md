@@ -33,7 +33,7 @@ I used some web technologies in order to train:mortar_board::
 * Jquery
 
 ## Getting Started
-It is so simple to install and run this project on your local machine, but you can just go to this [link]https://hildebrando-viana-matos.github.io/sale_website/home)
+It is so simple to install and run this project on your local machine, but you can just go to this [link](https://hildebrando-viana-matos.github.io/sale_website/home)
 ### Installation
 1. Clone the repository
    ```sh
